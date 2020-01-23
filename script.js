@@ -13,11 +13,18 @@ wrapText.innerHTML = newsText[0].innerHTML;
 circles[0].classList.add('nav__circle-item-active');
 
 
-
-let i = 0;
 let newsInterval = setInterval(nextNews, 6000);
 
+
+// circles.forEach(function(el) {
+	// circles[el].addEventListener('click', event => {
+// 		console.log(circles[el]);
+// 	} );});
+
+	let i = 0;
 function nextNews() {
+
+	i=(i+1)%6;
 	wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
  	wrapHeader.innerHTML = newsHeader[i].innerHTML;
  	wrapText.innerHTML = newsText[i].innerHTML;
@@ -26,9 +33,4 @@ function nextNews() {
  		circles[5].classList.remove("nav__circle-item-active");
  	 	};
  	circles[i].classList.add('nav__circle-item-active');
-	i=(i+1)%6;
 }
-
-
-
-
