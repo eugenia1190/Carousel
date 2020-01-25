@@ -2,7 +2,7 @@ let newsHeader = [...document.getElementsByClassName('news__item-header')];
 let newsPhoto = [...document.getElementsByClassName('news__item-photo')];
 let newsText = [...document.getElementsByClassName('news__item-text')];
 let circles = [...document.getElementsByClassName('nav__circle-item')];
-console.log(circles);
+
 const wrapHeader = document.getElementById('nav__news-header');
 const wrapPhoto = document.getElementById('nav__news-photo');
 const wrapText = document.getElementById('nav__news-text');
@@ -36,8 +36,6 @@ circles.forEach(function(item) {
 	item.classList.remove("nav__circle-item-active");
 	item.addEventListener('click', event => {
 			i = circles.indexOf(item);
-			console.log(i);
-			setInterval(newsInterval);
 			wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
  	wrapHeader.innerHTML = newsHeader[i].innerHTML;
  	wrapText.innerHTML = newsText[i].innerHTML;
