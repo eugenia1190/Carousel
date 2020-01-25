@@ -7,21 +7,16 @@ const wrapHeader = document.getElementById('nav__news-header');
 const wrapPhoto = document.getElementById('nav__news-photo');
 const wrapText = document.getElementById('nav__news-text');
 
-wrapPhoto.setAttribute('src', newsPhoto[0].getAttribute('src'));
-wrapHeader.innerHTML = newsHeader[0].innerHTML;
-wrapText.innerHTML = newsText[0].innerHTML;
-circles[0].classList.add('nav__circle-item-active');
+let i = 0;
+wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
+wrapHeader.innerHTML = newsHeader[i].innerHTML;
+wrapText.innerHTML = newsText[i].innerHTML;
+circles[i].classList.add('nav__circle-item-active');
 
 
-let newsInterval = setInterval(nextNews, 6000);
+let newsInterval = setInterval(nextNews, 3000);
 
 
-// circles.forEach(function(el) {
-	// circles[el].addEventListener('click', event => {
-// 		console.log(circles[el]);
-// 	} );});
-
-	let i = 0;
 function nextNews() {
 
 	i=(i+1)%6;
@@ -34,3 +29,19 @@ function nextNews() {
  	 	};
  	circles[i].classList.add('nav__circle-item-active');
 }
+
+
+
+circles.forEach(function(item) {
+	item.classList.remove("nav__circle-item-active");
+	item.addEventListener('click', event => {
+			i = circles.indexOf(item);
+			console.log(i);
+			setInterval(newsInterval);
+			wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
+ 	wrapHeader.innerHTML = newsHeader[i].innerHTML;
+ 	wrapText.innerHTML = newsText[i].innerHTML;
+ 	 	circles[i].classList.add('nav__circle-item-active');
+
+		});
+});
