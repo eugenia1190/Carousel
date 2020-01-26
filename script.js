@@ -18,28 +18,23 @@ let newsInterval = setInterval(nextNews, 3000);
 
 
 function nextNews() {
-
+	circles.forEach(function(item) {item.classList.remove("nav__circle-item-active");});
 	i=(i+1)%6;
 	wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
  	wrapHeader.innerHTML = newsHeader[i].innerHTML;
  	wrapText.innerHTML = newsText[i].innerHTML;
- 	if(circles[i-1]) {circles[i-1].classList.remove("nav__circle-item-active");};
- 	if( circles[5].classList.length == 2 && i==0) {
- 		circles[5].classList.remove("nav__circle-item-active");
- 	 	};
  	circles[i].classList.add('nav__circle-item-active');
 }
 
 
 
 circles.forEach(function(item) {
-	item.classList.remove("nav__circle-item-active");
 	item.addEventListener('click', event => {
-			i = circles.indexOf(item);
-			wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
- 	wrapHeader.innerHTML = newsHeader[i].innerHTML;
- 	wrapText.innerHTML = newsText[i].innerHTML;
+		circles.forEach(function(elem) {elem.classList.remove("nav__circle-item-active");});
+		i = circles.indexOf(item);
+		wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
+ 		wrapHeader.innerHTML = newsHeader[i].innerHTML;
+ 		wrapText.innerHTML = newsText[i].innerHTML;
  	 	circles[i].classList.add('nav__circle-item-active');
-
-		});
+	});
 });
