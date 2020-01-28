@@ -93,6 +93,8 @@ body
     width: 15%;
 
     justify-content: space-between;
+
+    cursor: pointer;
 }
 
 .nav__circle-item
