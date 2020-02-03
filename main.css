@@ -122,8 +122,13 @@ body
 
 .news__item
 {
+    display: flex;
+
+    width: auto;
     height: 250px;
     padding: 10px;
+
+    align-items: flex-start;
 }
 
 .news__item-header
@@ -144,16 +149,6 @@ body
     opacity: .5;
 }
 
-.news__item-content
-{
-    display: flex;
-
-    height: 100%;
-    width: auto;
-
-    align-items: flex-start;
-}
-
 .news__item-photo
 {
 	height: 100%;
@@ -170,7 +165,7 @@ body
     justify-content: center;
 }
 
-.news__item-text
+.news__item-content
 {
     width: 50%;
     margin: 0;
