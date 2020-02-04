@@ -40,9 +40,6 @@ circles.forEach(function(item) {
 	});
 });
 
-
 arrow.addEventListener('click', function (event) {
-	document.documentElement.scrollIntoView(true);
+	document.documentElement.scrollIntoView({behavior: 'smooth'});
 });
-
-
