@@ -6,6 +6,7 @@ let circles = [...document.getElementsByClassName('nav__circle-item')];
 const wrapHeader = document.getElementById('nav__news-header');
 const wrapPhoto = document.getElementById('nav__news-photo');
 const wrapText = document.getElementById('nav__news-text');
+const arrow = document.getElementById('arrow');
 
 let i = 0;
 wrapPhoto.setAttribute('src', newsPhoto[i].getAttribute('src'));
@@ -38,3 +39,10 @@ circles.forEach(function(item) {
  	 	circles[i].classList.add('nav__circle-item-active');
 	});
 });
+
+
+arrow.addEventListener('click', function (event) {
+	document.documentElement.scrollIntoView(true);
+});
+
+
