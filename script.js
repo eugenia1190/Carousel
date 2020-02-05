@@ -43,3 +43,14 @@ circles.forEach(function(item) {
 arrow.addEventListener('click', function (event) {
 	document.documentElement.scrollIntoView({behavior: 'smooth'});
 });
+
+window.addEventListener('scroll', function() {
+	if (window.pageYOffset >= 250) {
+		arrow.classList.add ('arrow-active');
+	} else {
+		arrow.classList.remove('arrow-active');
+	}
+});
+
+
+
