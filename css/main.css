@@ -25,6 +25,8 @@ body
 .container
 {
     padding: 0 15% 0 15%;
+    margin: 0 auto;
+    max-width: 1300px;
 }
 
 .slider
@@ -38,8 +40,8 @@ body
 .slider__wrap
 {
     position: absolute;
-
     width: 70%;
+    max-width: 1300px; 
     height: 400px;
 }
 
