@@ -1,7 +1,9 @@
 body
 {
     font-family: 'Montserrat';
-font-size: 15px;
+    font-size: 15px;
+
+    width: 100%;
     margin: 0;
 
     background-color: #893f45;
@@ -217,13 +219,23 @@ font-size: 15px;
     }
 }
 
-/*Десктопная версия*/
-
 @media (max-width: 1200px)
 {
     body
     {
         font-size: 10px;
+    }
+
+    .slider__news-content
+    {
+        padding: 40px;
+    }
+
+
+    .slider__circle-item
+    {
+        width: 10px;
+        height: 10px;
     }
 
     .news__item
@@ -232,11 +244,58 @@ font-size: 15px;
         padding: 5px;
     }
 
+    .news__item-text
+    {
+        margin: 0;
+    }
+
+    .news__item-header
+    {
+        margin: 0 0 7px 0;
+    }
 }
+
 @media (max-width:980px)
 {
     body
     {
         font-size: 8px;
+    }
+
+    .slider__wrap,
+    .slider
+    {
+        height: 220px;
+    }
+
+    .slider__news-content
+    {
+        padding: 30px;
+    }
+
+    .slider__circle-item
+    {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 768px)
+{
+    body
+    {
+        font-size: 6px;
+        min-width: 500px;
+    }
+
+    .slider__wrap,
+    .slider
+    {
+        min-width: 350px;
+    }
+
+    .slider__news-content
+    {
+        padding: 20px;
     }
 }
